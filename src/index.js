@@ -13,3 +13,4 @@ ReactDOM.render(
 
 reportWebVitals();
 
+//React.StrictMode => check legacy react code or any inproper code

@@ -1,6 +1,6 @@
 import logo from './logo.svg'; //modulize image
 import './App.css';
-import Hello from './components/Hello/Hello'
+import Hello from './components/Hello'
 
 function App() {
   return (

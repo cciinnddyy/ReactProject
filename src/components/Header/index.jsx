@@ -1,11 +1,26 @@
 import React,{Component} from 'react'
+import {nanoid} from 'nanoid'
 import '../../App.css'
 
 export default class Header extends Component{
+    state={
+        inputVal:""
+    }
+    AddNewTask = (abc)=>(event)=>{        
+        if(event.keyCode===13){
+            const todoObj = {id:nanoid(),name:event.target.value,isDone:false}
+            if(event.target.value===''){
+                alert('Please Input!!!')
+            }else{
+                this.props.parentFunc(todoObj)
+            }
+            event.target.value = ""
+        }
+    }
     render(){
         return (
                 <div className='todo-header'>
-                    <input placeholder='Task to do' type='text'></input>
+                    <input onKeyUp={this.AddNewTask(this.props.Hello)} placeholder='Task to do' type='text'></input>
                 </div>
             )
     }

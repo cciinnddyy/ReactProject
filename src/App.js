@@ -15,12 +15,22 @@ class App extends Component{
   getHeaderValue = (data)=>{
     this.setState({todos:[data,...this.state.todos]})
   }
+  updateTodos = (id,done)=>{
+      let newTodos = this.state.todos.map((obj)=>{
+          if(obj.id===id){
+              return {...obj,isDone:done}
+          }else{
+              return {...obj}
+          }
+      })
+      this.setState({todos:newTodos})
+  }
   render(){
     return (  
           <div className='todo-container'>
             <div className='todo-wrap'>
                 <Header Hello={"Wow"} parentFunc={this.getHeaderValue}/>
-                <List Todos={this.state.todos}/>
+                <List Todos={this.state.todos} updatetodos={this.updateTodos}/>
                 <Footer/>
             </div>
           </div>

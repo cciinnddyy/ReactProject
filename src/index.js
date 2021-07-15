@@ -1,16 +1,12 @@
-import React from 'react';
+//引入react 核心庫
+import React,{Component} from 'react';
+//引入 react DOM
 import ReactDOM from 'react-dom';
-import './index.css';
+// 引入 APP component
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 
-reportWebVitals();
-
-//React.StrictMode => check legacy react code or any inproper code

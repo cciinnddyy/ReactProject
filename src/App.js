@@ -25,12 +25,21 @@ class App extends Component{
       })
       this.setState({todos:newTodos})
   }
+  deleteTodos = (id)=>{
+      console.log("deleteTodos App",id)
+      let newTodos = this.state.todos.filter((obj)=>{
+          if(obj.id!==id){
+            return obj
+          }        
+      })
+      this.setState({todos:newTodos})
+  }
   render(){
     return (  
           <div className='todo-container'>
             <div className='todo-wrap'>
-                <Header Hello={"Wow"} parentFunc={this.getHeaderValue}/>
-                <List Todos={this.state.todos} updatetodos={this.updateTodos}/>
+                <Header Hello={"Hello"} parentFunc={this.getHeaderValue}/>
+                <List Todos={this.state.todos} updatetodos={this.updateTodos} deleteTodos={this.deleteTodos}/>
                 <Footer/>
             </div>
           </div>

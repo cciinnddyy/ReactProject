@@ -1,12 +1,27 @@
 import React,{Component} from 'react'
 import './App.css'
-
+import axios from 'axios' 
 class App extends Component{
-  //初始化狀態
   
+  //初始化狀態
+  getStudents = ()=>{
+    axios.get("http://localhost:3000/api1/students").then(
+      response=>{console.log("success",response.data)},
+      error => {console.log("error",error)}
+    )
+  }
+  getCars = ()=>{
+    axios.get("http://localhost:3000/api2/cars").then(
+      response=>{console.log("success",response.data)},
+      error => {console.log("error",error)}
+    )
+  }
   render(){
     return (  
-          <div></div>
+          <div>
+            <button onClick={this.getStudents}>Click Me</button>
+            <button onClick={this.getCars}>Cars</button>
+          </div>
       )
   }
 }
@@ -14,7 +29,3 @@ class App extends Component{
 //Export APP component
 export default App;
 
-//State 如果是共同使用的數據 放在共同的父組建中
-//如果只有自己使用就放在自己的 state
-
-//父組件 ＝> 給子傳值 用props

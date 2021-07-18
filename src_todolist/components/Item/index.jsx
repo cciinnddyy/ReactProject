@@ -19,7 +19,7 @@ export default class Item extends Component {
         return (                                      
                     <li style={{backgroundColor:this.state.flag?'#ddd':'white'}} onMouseEnter={()=>{this.handleMouse(true)}} onMouseLeave={()=>{this.handleMouse(false)}}>
                         <label>
-                            <input type='checkbox' defaultChecked={this.props.isDone} onChange={(event)=>{this.handTick(event,this.props.id)}}/>
+                            <input type='checkbox' checked={this.props.isDone} onChange={(event)=>{this.handTick(event,this.props.id)}}/>
                             <span>{this.props.name}</span>
                         </label>
                         <button style={{display:this.state.flag? '':'none'}} className="btn btn-danger" onClick={()=>{this.handleDelete(this.props.id)}}> Delete </button>

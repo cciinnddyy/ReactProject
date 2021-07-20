@@ -1,5 +1,5 @@
 //引入react 核心庫
-import React,{Component} from 'react';
+import React from 'react';
 //引入 react DOM
 import ReactDOM from 'react-dom';
 // 引入 APP component

@@ -4,13 +4,17 @@ import axios from 'axios';
 export default class SearchBar extends Component {
     onSearch = ()=>{
         console.log(this.keyWordElement.value)
-        axios.get(`http://localhost:3000/api1/search/users2?q=${this.keyWordElement.value}`).then(
-          Response=>{console.log("Success ", Response.data)
-          this.props.onSearch(Response.data)
+        this.props.onSearch({initiate:false,isLoading:true})
+        axios.get(`http://localhost:3000/api1/search/users?q=${this.keyWordElement.value}`).then(
+          Response=>{
+            console.log("Success ", Response.data)
+            this.props.onSearch({data:Response.data.items,isLoading:false})
         },
-          Error =>{console.log("Failed")}
-        )
-        
+          Error =>{
+            console.log("Failed")
+            this.props.onSearch({isLoading:false,errMsg:Error.message})
+        }
+        )        
     }
     render() {
         return (

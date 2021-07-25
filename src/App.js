@@ -4,16 +4,21 @@ import SearchBar from './components/SearchBar';
 import List from './components/List'
 export default class App extends Component {
   state = {
-    data:[]
+    data:[],
+    initiate:true,
+    isLoading:false,
+    errMsg:''
   }
-  GetSearch = (Data)=>{
-    this.setState({data:Data.items})
+
+  updateState = (stateObj)=>{
+    this.setState(stateObj)
   }
+
   render() {
     return (
       <div className="container">
-          <SearchBar onSearch = {this.GetSearch}/>
-          <List gitAvatar={this.state.data}/>
+          <SearchBar onSearch = {this.updateState}/>
+          <List {...this.state}/>
       </div>
     )
   }

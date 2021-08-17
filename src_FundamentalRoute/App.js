@@ -1,8 +1,7 @@
   import React, { Component } from 'react'
   import {Link,BrowserRouter,Route} from 'react-router-dom'
-  import About from './pages/About' //路由組件, <Home/> => 一般組件 可以收到父組件傳的東西
-  import Home from './pages/Home'
-  import Header from './components/Header'
+  import About from './components/About'
+  import Home from './components/Home'
   export default class App extends Component {
 
 
@@ -11,7 +10,7 @@
           <div>
         <div className="row">
           <div className="col-xs-offset-2 col-xs-8">
-            <div className="page-header"><Header/></div>
+            <div className="page-header"><h2>React Router Demo</h2></div>
           </div>
         </div>
         <div className="row">

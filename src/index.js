@@ -11,4 +11,5 @@ ReactDOM.render(
     </BrowserRouter>,
   document.getElementById('root')
 );
+//<HashRouter> => createHashHistory (路徑中 有 ＃) Anchor value = hashvalue => # 後面的值 都不會發送給服務器的
 

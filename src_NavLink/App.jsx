@@ -1,11 +1,10 @@
   import React, { Component } from 'react'
-  import {Link,BrowserRouter,Route} from 'react-router-dom'
+  import {NavLink,Link,BrowserRouter,Route} from 'react-router-dom'
   import About from './pages/About' //路由組件, <Home/> => 一般組件 可以收到父組件傳的東西
-  import Home from './pages/Home'
-  import Header from './components/Header'
+  import Home from './pages/Home' //我是路由組件
+  import Header from './components/Header' //我是一般組件
+  import MyNavLink from './components/MyNavLink'
   export default class App extends Component {
-
-
     render() {
       return (
           <div>
@@ -24,8 +23,9 @@
               to 別寫大寫*/}
               {/* 1. Browser Router 
                   2. HashRouter # */}              
-                  <Link className="list-group-item" to="./about">About</Link>
-                  <Link className="list-group-item active" to="./home">Home</Link>             
+                    
+                  <MyNavLink to='./about'>About</MyNavLink> {/* Inner text is props.children */} 
+                  <MyNavLink to='./home'>Home</MyNavLink>      
             </div>
           </div>
           <div className="col-xs-6">

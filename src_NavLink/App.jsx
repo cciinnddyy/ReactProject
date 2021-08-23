@@ -32,11 +32,8 @@
             <div className="panel">
               <div className="panel-body">
                 {/* Register route */}
-                <switch> {/* 效率比較高 */}
                   <Route path='/about' component={About}/>
-                  <Route path='/home'  component= {Home}/>
-                  <Route path ='home'  component={About} />
-                </switch>
+                  <Route path='/home' component={Home}/>
               </div>
             </div>
           </div>

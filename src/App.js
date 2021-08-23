@@ -1,5 +1,5 @@
   import React, { Component } from 'react'
-  import {Link,BrowserRouter,Route} from 'react-router-dom'
+  import {NavLink,Link,BrowserRouter,Route} from 'react-router-dom'
   import About from './pages/About' //路由組件, <Home/> => 一般組件 可以收到父組件傳的東西
   import Home from './pages/Home'
   import Header from './components/Header'
@@ -24,8 +24,8 @@
               to 別寫大寫*/}
               {/* 1. Browser Router 
                   2. HashRouter # */}              
-                  <Link className="list-group-item" to="./about">About</Link>
-                  <Link className="list-group-item active" to="./home">Home</Link>             
+                  <NavLink activeClassName="customizeactive" className="list-group-item" to="./about">About</NavLink>
+                  <NavLink activeClassName="customizeactive" className="list-group-item" to="./home">Home</NavLink>             
             </div>
           </div>
           <div className="col-xs-6">

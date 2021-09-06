@@ -32,10 +32,10 @@
             <div className="panel">
               <div className="panel-body">
                 {/* Register route */}
-                <switch> {/* 效率比較高 進行單一匹配 只要找到第一個匹配的路徑 就不往下走了*/}
+                <switch> {/* 效率比較高 */}
                   <Route path='/about' component={About}/>
                   <Route path='/home'  component= {Home}/>
-                  <Route path ='/home'  component={About} />
+                  <Route path ='home'  component={About} />
                 </switch>
               </div>
             </div>

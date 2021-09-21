@@ -35,7 +35,7 @@
                 <Switch> {/* 效率比較高 進行單一匹配 只要找到第一個匹配的路徑 就不往下走了*/}
                   <Route path='/about' component={About}/>
                   <Route path='/home'  component= {Home}/>
-                  <Route path ='/home'  component={About} />
+                {/*<Route path ='/home'  component={About} />*/}
                 </Switch>
               </div>
             </div>

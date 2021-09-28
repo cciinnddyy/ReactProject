@@ -1,5 +1,5 @@
   import React, { Component } from 'react'
-  import {NavLink,Link,BrowserRouter,Route,Switch} from 'react-router-dom'
+  import {Route,Switch,Redirect} from 'react-router-dom'
   import About from './pages/About' //路由組件, <Home/> => 一般組件 可以收到父組件傳的東西
   import Home from './pages/Home' //我是路由組件
   import Header from './components/Header' //我是一般組件
@@ -22,8 +22,7 @@
               {/* React 中 靠路由鏈結 
               to 別寫大寫*/}
               {/* 1. Browser Router 
-                  2. HashRouter # */}              
-                    
+                  2. HashRouter # */}                                  
                   <MyNavLink to='./about'>About</MyNavLink> {/* Inner text is props.children */} 
                   <MyNavLink to='./home'>Home</MyNavLink>      
             </div>
@@ -35,6 +34,7 @@
                 <Switch> {/* 效率比較高 進行單一匹配 只要找到第一個匹配的路徑 就不往下走了*/}
                   <Route path='/about' component={About}/>
                   <Route path='/home'  component= {Home}/>
+                  <Redirect to="/about"/> {/*放在最後,如果前面都沒匹配上,聽從重定向的發落*/}
                 {/*<Route path ='/home'  component={About} />*/}
                 </Switch>
               </div>

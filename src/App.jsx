@@ -23,8 +23,8 @@
               to 別寫大寫*/}
               {/* 1. Browser Router 
                   2. HashRouter # */}                                  
-                  <MyNavLink to='./about'>About</MyNavLink> {/* Inner text is props.children */} 
-                  <MyNavLink to='./home'>Home</MyNavLink>      
+                  <MyNavLink to='/about'>About</MyNavLink> {/* Inner text is props.children */} 
+                  <MyNavLink to='/home'>Home</MyNavLink>      
             </div>
           </div>
           <div className="col-xs-6">
